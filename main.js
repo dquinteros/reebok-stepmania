@@ -2,6 +2,10 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 
+require('electron-reload')(__dirname,{
+  electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
+});
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -17,10 +21,13 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
+
+  // // and load the index.html of the app.
+  // mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {

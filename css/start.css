@@ -1,0 +1,49 @@
+#start {
+    position: absolute;
+    background: url('../img/bg-start.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+#ftext {
+    background-image: url('../img/start-text.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    margin-top: -100px;
+}
+
+#stext{
+    background-image: url('../img/text-start-two.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    margin-top: -100px;
+}
+
+.arrow{
+    background-image: url('../img/start-arrows.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 78px;
+    top: auto;
+    left: 0;
+    right: 0;
+    height: 300px;
+    animation: top-bottom;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes top-bottom{
+    0%{ bottom: 150px; opacity: 0; }
+    100% { bottom: 78px; opacity: 1;}
+}
