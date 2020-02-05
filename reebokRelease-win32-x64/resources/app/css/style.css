@@ -1,0 +1,46 @@
+
+@font-face {
+    font-family: 'NeuePlak-ExtendedBlack';
+    src: url('NeuePlak-ExtendedBlack.eot') format('embedded-opentype');
+    src: url('NeuePlak-ExtendedBlack.otf') format('otf');
+    src: url('NeuePlak-ExtendedBlack.svg') format('svg');
+    src: url('NeuePlak-ExtendedBlack.ttf') format('truetype');
+    src: url('NeuePlak-ExtendedBlack.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  
+  
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-family: 'NeuePlak-ExtendedBlack' !important;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: 'NeuePlak-ExtendedBlack' !important;
+}
+
+.logos-top {
+    background-image: url('../img/logos-top.png');
+    /* background-color: brown; */
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    width: 100%;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+}
+
+.view-show{
+    display: inherit;
+}
+
+.view-hidden{
+    display: none;
+}

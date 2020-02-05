@@ -1,0 +1,25 @@
+{
+  "name": "reebok-stepmania",
+  "version": "1.0.0",
+  "description": "Reebok stepmania game controlled by arduino",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "Diversivo",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^7.1.8"
+  },
+  "dependencies": {
+    "electron-reload": "^1.5.0"
+  }
+}

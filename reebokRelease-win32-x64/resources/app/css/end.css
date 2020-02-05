@@ -1,0 +1,43 @@
+.end{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/end-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.end__text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-image: url('../img/end-text.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 631px;
+}
+
+.end__score{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 850px;
+    height: 150px;
+    color: white;
+    font-size: 9em;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 360px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.puntos{
+    margin-left: 24px;
+}

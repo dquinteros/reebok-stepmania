@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <link rel="stylesheet" href="font/style.css">
+  <link rel="stylesheet" href="css/start.css">
+  <link rel="stylesheet" href="css/video.css">
+  <link rel="stylesheet" href="css/guide.css">
+  <link rel="stylesheet" href="css/wait.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/end.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Reebok HIIT!</title>
+</head>
+
+<body>
+  <!-- Start -->
+  <div id="start">
+    <div class="logos-top"></div>
+    <div id="ftext"></div>
+    <div id="stext"></div>
+    <div class="arrow"></div>
+  </div>
+  </div>
+  <!-- Video -->
+  <div id="video" class="bg-video">
+    <video autoplay muted loop id="myVideo">
+      <source src="img/video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <!-- Guide -->
+  <div id="guide" class="guide view-hidden">
+    <div class="logos-top"></div>
+    <div class="guide__text"></div>
+    <div class="arrow"></div>
+  </div>
+  <!-- Wait -->
+  <div id="wait" class="wait">
+    <div class="logos-top"></div>
+    <div class="ready"></div>
+    <div class="tree"></div>
+    <div class="two"></div>
+    <div class="one"></div>
+    <div class="now"></div>
+  </div>
+  <!-- Game -->
+  <div id="game" class="game">
+    <div class="logos-top"></div>
+    <video autoplay muted loop class="bg-video" id="myVideo">
+      <source src="img/video.mp4" type="video/mp4">
+    </video>
+    <div class="game__content">
+      <div id="game__battery">
+      </div>
+      <div class="game__arrows"></div>
+      <div class="game__points">
+        <h1 id="points">17</h1>
+      </div>
+      <div class="game__time">
+        <p id="time">12.00</p>
+      </div>
+    </div>
+  </div>
+  <!-- End -->
+  <div id="end" class="end">
+    <div class="end__text"></div>
+    <div class="end__score">
+      <p id="js-end__score">0</p>
+      <p class="puntos"> PUNTOS</p>
+    </div>
+  </div>
+  <!-- You can also require other files to run in this process -->
+  <script src="./renderer.js"></script>
+</body>
+
+</html>

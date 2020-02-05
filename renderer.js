@@ -11,13 +11,14 @@ const posibleViews = [
   { name: 'guide', function: () => null },
   { name: 'wait', function: wait },
   { name: 'game', function: game },
-  { name: 'end', function: () => null }
+  { name: 'end', function: end }
 ]
 
 const gameState = {
   view: posibleViews[0],
   viewCount: 0,
-  score: 0
+  score: 0,
+  lockedKey: ''
 }
 
 function setup() {
@@ -29,6 +30,7 @@ function setup() {
   document.getElementById('end').style.display = 'none';
   startLoop();
   gameState.score = 0;
+  gameState.lockedKey = '';
 }
 
 function nextView() {
@@ -77,9 +79,10 @@ function video() {
 function wait() {
   function timeoutFunction() {
     if (gameState.view.name !== 'wait') {
-      console.log('Video Timeout Cleared');
+      console.log('Wait Timeout Cleared');
       clearTimeout(waitTimeout)
     } else {
+      console.log('Wait Next vIew');
       nextView();
     }
   }
@@ -88,6 +91,10 @@ function wait() {
 
 function game() {
   let time = 2000;
+  const numberPoints = document.getElementById("points");
+  numberPoints.innerText = gameState.score;
+  const points = document.getElementById("game__battery");
+  points.innerHTML = '';
   function timeoutFunction() {
     if (gameState.view.name !== 'game') {
       console.log('Game Timeout Cleared');
@@ -108,16 +115,18 @@ function game() {
     console.log('time', time % 100)
     const sec = time / 100;
     const remaninder = time % 100;
-    const seconds = sec < 10 ? `0${Math.floor(sec)}`: Math.floor(sec);
-    const milis = remaninder < 10 ? `0${remaninder}`: remaninder;
-    timeDiv.innerText =`${seconds}.${milis}`;
+    const seconds = sec < 10 ? `0${Math.floor(sec)}` : Math.floor(sec);
+    const milis = remaninder < 10 ? `0${remaninder}` : remaninder;
+    timeDiv.innerText = `${seconds}.${milis}`;
   }
 
   const timeInterval = setInterval(setTime, 10);
   const gameTimeout = setTimeout(timeoutFunction, 20000);
 }
 
-function wait() {
+function end() {
+  const points = document.getElementById("js-end__score");
+  points.innerText = gameState.score;
   function timeoutFunction() {
     if (gameState.view.name !== 'wait') {
       console.log('Video Timeout Cleared');
@@ -129,6 +138,20 @@ function wait() {
   const endTimeout = setTimeout(timeoutFunction, 30000);
 }
 
+function addPoints() {
+  if (gameState.view.name === 'game' && gameState.score < 20) {
+    gameState.score++;
+    const numberPoints = document.getElementById("points");
+    numberPoints.innerText = gameState.score;
+    const points = document.getElementById("game__battery");
+    points.innerHTML = '';
+    for (let index = 0; index <= gameState.score; index = index + 2) {
+      console.log('HEREE');
+
+      points.innerHTML += '<div class="game__line"></div>'
+    }
+  }
+}
 
 
 // Define Key listeners
@@ -136,17 +159,35 @@ document.addEventListener("keydown", event => {
   if (event.code === 'KeyZ') {
     nextView();
   } else if (event.code === 'KeyQ') {
-    gameState.score++;
+    if (gameState.lockedKey !== event.code) {
+      gameState.lockedKey = event.code;
+      addPoints();
+    }
   } else if (event.code === 'KeyW') {
-    gameState.score++;
+    if (gameState.lockedKey !== event.code) {
+      gameState.lockedKey = event.code;
+      addPoints();
+    }
   } else if (event.code === 'KeyE') {
-    gameState.score++;
+    if (gameState.lockedKey !== event.code) {
+      gameState.lockedKey = event.code;
+      addPoints();
+    }
   } else if (event.code === 'KeyA') {
-    gameState.score++;
+    if (gameState.lockedKey !== event.code) {
+      gameState.lockedKey = event.code;
+      addPoints();
+    }
   } else if (event.code === 'KeyS') {
-    gameState.score++;
+    if (gameState.lockedKey !== event.code) {
+      gameState.lockedKey = event.code;
+      addPoints();
+    }
   } else if (event.code === 'KeyD') {
-    gameState.score++;
+    if (gameState.lockedKey !== event.code) {
+      gameState.lockedKey = event.code;
+      addPoints();
+    }
   } else if (event.code === 'KeyR') {
     gameState.view = posibleViews[0];
     gameState.viewCount = 0;
